@@ -6,7 +6,6 @@
     function FormController($scope, $location, $log, $timeout, $cookies, $rootScope, AuthService, ToasterService) {
         var vm = this;
         
-        console.log($rootScope);
         $rootScope.user = {login:'', password:''};
         $rootScope.auth = {login:'admin', password:'123'};
 

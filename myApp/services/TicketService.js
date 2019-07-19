@@ -9,7 +9,8 @@
                 getAllTickets: getAllTickets,
                 deleteTicket: deleteTicket,
                 updateTicket: updateTicket,
-                getTicketById: getTicketById
+                getTicketById: getTicketById,
+                createTicket: createTicket
             };
 
             function getAllTickets () {
@@ -34,6 +35,15 @@
                         .then(sendResponseData)
                         .catch(sendErrorData);
             }
+
+            function createTicket(data) {
+                return $http.post(
+                      'http://localhost:8080/api/tickets',
+                      data
+                )
+                      .then(sendResponseData)
+                      .catch(sendErrorData);
+          }
 
             function deleteTicket(id) {
                   return $http.delete(

@@ -1,4 +1,4 @@
-<div class = "d-flex" id = "wrapper" ng-controller = "TicketPageController">
+<div class = "d-flex" id = "wrapper" ng-controller = "TicketPageController as tc">
     <!-- Sidebar -->
     <div class = "bg-light border-right border-bottom p-2">
         <button class="sidebar-heading">Создать заявку</button>
@@ -14,19 +14,69 @@
         </div>
     </div>
     <div class="w-100">
-            <div class="row text-center m-0">
-            <div class="col-4 border p-0">
-            Create date
+        <div class="row text-center m-0">
+            <div class="col-3 border p-0" ng-model="tc.ticket.timeCreate">
+                {{tc.ticket.timeCreate}}
+            </div>
+            <div class="col-3 border p-0">
+                <select ng-model="tc.ticket.status">
+                    <option>
+                        Open
+                    </option>
+                    <option>
+                        In process
+                    </option>
+                    <option>
+                        Close
+                    </option>
+                </select>
+            </div>
+            <div class="col-3 border p-0">
+                <select ng-model="tc.ticket.assignee">
+                    <option>
+                        Неприсвоенный
+                    </option>
+                    <option>
+                        Admin
+                    </option>
+                </select>
+            </div>
+            <div class="col-3 border p-0">
+                <select ng-model="tc.ticket.status">
+                    <option>
+                        Open
+                    </option>
+                    <option>
+                        In process
+                    </option>
+                    <option>
+                        Close
+                    </option>
+                </select>
+            </div>
+            <div class="col-4 border p-0 offset-2 mt-4" ng-model="tc.ticket.timeUpdate">
+                {{tc.ticket.timeUpdate}}
+            </div>
+            <div class="col-4 border p-0 mt-4" ng-model="tc.ticket.from">
+                {{tc.ticket.from}}
+            </div>            
+            <div class="col-8 border p-2 offset-2" ng-model="tc.ticket.title">
+                {{tc.ticket.title}}
+            </div>
+            <div class="col-8 border p-2 offset-2" ng-model="tc.ticket.text">
+                {{tc.ticket.text}}
+            </div>
+            <div class="col-8 border p-2 offset-2">
+                <textarea type="text" name="textMessage" class = "w-100" ng-model="ticket.newtext"></textarea>
+                <button type="submit" class="btn btn-primary"
+                                    ng-click="tc.updateTicket()">Submit
+                </button>
+                <button class="btn btn-warning"
+                                    ng-click="tc.cancelUpdate()">Cancel
+                </button>
+            </div>
         </div>
-        <div class="col-4 border p-0">
-            Status
-        </div>
-    <div class="col-4 border p-0">
-            Priority
-        </div>
-        <div class="col-4 border p-0 offset-2">
-            Priority
-        </div><div class="col-4 border p-0">Priority</div><div class="col-8 border p-1 offset-2">text<br><br><br><br><br><br><br><br><br><br><br></div>
-        </div>
-        </div>
+    </div>
+    <toaster-container class="toaster main-toaster"
+                       toaster-options="{'animation-class': 'toast-top-right', 'limit': 5}"></toaster-container>
 </div>

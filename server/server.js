@@ -7,7 +7,7 @@ const db = require('./config/db');
 const app = express();
 const router = express.Router();
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 
 MongoClient.connect(db.url, (err, database) => {
 
@@ -21,7 +21,11 @@ MongoClient.connect(db.url, (err, database) => {
         res.sendFile(path.join(__dirname + "/../myApp/index.html"));
     });
 
-    router.get("/ticket", function (req, res) {
+    router.get("/ticket*", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../myApp/index.html"));
+    });
+
+    router.get("/create", function (req, res) {
         res.sendFile(path.join(__dirname + "/../myApp/index.html"));
     });
 

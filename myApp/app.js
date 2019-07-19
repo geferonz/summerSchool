@@ -16,6 +16,12 @@
         .when('/ticket', {
             templateUrl : 'views/ticketPage.html',
         })
+        .when('/ticket/:id', {
+            templateUrl : 'views/ticketPage.html',
+        })
+        .when('/create', {
+            templateUrl : 'views/createTicketPage.html',
+        })
         .otherwise('/', {
             templateUrl : 'views/auth.html',
         });
@@ -24,11 +30,5 @@
     app.factory(function($cookies) {
         $cookies.put('myFavorite', 'oatmeal');
     });
-
-    app.run(['$rootScope', function ($rootScope) {
-        $rootScope.$on('$routeChangeStart', function () {
-            console.log('Hi');
-        })
-    }])
 
 })();

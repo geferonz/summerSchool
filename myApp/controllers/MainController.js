@@ -7,7 +7,7 @@
         var vm = this;
 
         if ($cookies.get('isAuthorized')){
-            AuthService.login(true);
+            //AuthService.login(true);
         }
 
         vm.logout = function () {
@@ -18,12 +18,5 @@
             $location.path('/');
         };
 
-        //AuthService.getAllTickets()
-        //    .then(function(data) {
-        //        console.log(data);
-        //    })
-        //    .catch(function(err)
-        //        console.log(err)
-        //    })
     }
 })();

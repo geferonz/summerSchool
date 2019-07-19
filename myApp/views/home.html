@@ -1,4 +1,4 @@
-<div class = "d-flex" id = "wrapper" ng-controller = "TicketSelectController">
+<div class = "d-flex" id = "wrapper" ng-controller = "TicketSelectController as vm">
     <!-- Sidebar -->
     <div class = "bg-light border-right border-bottom p-2">
         <button class="sidebar-heading">Создать заявку</button>
@@ -19,7 +19,6 @@
                 <tr>
                     <th scope = "col"><input type="checkbox"></th>
                     <th scope = "col">Тема</th>
-                    <th scope = "col">ID заявки</th>
                     <th scope = "col">Заявка от</th>
                     <th scope = "col">Исполнитель</th>
                     <th scope = "col">Последний ответ</th>
@@ -28,79 +27,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="ticket in vm.allBooks">
-                    <td>{{book.title}}</td>
-                    <td>{{book.author}}</td>
-                    <td>{{book.count}}</td>
-                    <td><a class="btn btn-default"
-                            href="#/editBook/{{book.id}}">Edit</a>
-                        <a
-                                class="btn btn-danger"
-                                ng-click="vm.disableBook(book.id)">Disable
-                        </a>
-                    </td>
-                </tr>
-                <tr>
+                <tr ng-repeat="ticket in vm.allTickets">
                     <th scope = "row"><input type="checkbox"></th>
-                    <td>Поломка</td>
-                    <td>860</td>
-                    <td>Yoda</td>
-                    <td>
-                        <select name = "owner">
-                            <option value ="Неприсвоенный">
-                                Неприсвоенный
-                            </option>
-                        </select>
+                    <td><a href="/ticket/{{ticket._id}}" ng-click="vm.editTicket(ticket._id)">{{ticket.title}}</a>
                     </td>
-                    <td>Yoda</td>
-                    <td>
-                        <select>
-                            <option value = "Открыто">
-                                Открыто
-                            </option>
-                            <option value = "В процессе">
-                                В процессе
-                            </option>
-                            <option value = "Выполнено">
-                                Выполнено
-                            </option>
-                        </select>
+                    <td>{{ticket.from}}</td>
+                    <td>{{ticket.assignee}}</td>
+                    <td>{{ticket.from}}</td>
+                    <td>{{ticket.status}}</td>
+                    <td>{{ticket.priority}}</td>
+                    <td><a class="btn btn-default"
+                        ng-click="vm.deleteTicket(ticket._id)">Delete</a>
                     </td>
-                    <td>
-                        <select>
-                            <option value = "Стандартный">
-                                Стандартный
-                            </option>
-                            <option value = "Средний">
-                                Средний
-                            </option>
-                            <option value = "Срочный">
-                                Срочный
-                            </option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><input type="checkbox"></th>
-                    <td>Не работает</td>
-                    <td>870</td>
-                    <td>Superman</td>
-                    <td>Неприсвоенный</td>
-                    <td>Superman</td>
-                    <td>Открыто</td>
-                    <td>Стандартно</td>
-                </tr>
-                <tr>
-                    <th scope="row"><input type="checkbox"></th>
-                    <td>Сломалось</td>
-                    <td>590</td>
-                    <td>Toto</td>
-                    <td>Неприсвоенный</td>
-                    <td>Toto</td>
-                    <td>Открыто</td>
-                    <td>Стандартно</td>
                 </tr>
             </tbody>
         </table>
     </div>    
+    <toaster-container class="toaster main-toaster"
+                       toaster-options="{'animation-class': 'toast-top-right', 'limit': 5}"></toaster-container>
 </div>

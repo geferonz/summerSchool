@@ -24,6 +24,7 @@ module.exports = function(app, db) {
     });
 
     app.post('/api/tickets', (req, res) => {
+        console.log(req.body);
         db.collection('tickets').insert(req.body, (err, result) => {
             if (err) {
                 res.send({ 'error': 'An error has occurred' });
@@ -47,9 +48,12 @@ module.exports = function(app, db) {
 
     app.put ('/api/tickets/:id', (req, res) => {
         const id = req.params.id;
+        delete req.body._id;
+        console.log(req.body);
         const ticketId = { '_id': new ObjectID(id) };
         db.collection('tickets').update(ticketId, req.body, (err, ticket) => {
           if (err) {
+              console.log(err);
               res.send({'error':'An error has occurred'});
           } else {
               res.send(ticket);
