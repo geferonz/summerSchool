@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.1.0/toaster.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <title>summerSchoolPr</title>
+    <base href="/">
+</head>
+
+<body ng-app="myApp" ng-controller="MainController as vm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-show="isAuthorized">
+        <a class="navbar-brand" href="/home">Helpdesk</a>
+        <input type="text" placeholder="Поиск" name="search" value="" id="global-search">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ticket">Ticket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div ng-controller="HomePageController">
+            <button ng-click="vm.logout()" class="btn btn-outline-light float-right">Sign out</button>
+        </div>
+    </nav>
+    
+    <div ng-view></div>
+    
+
+    <footer id="sticky-footer" class="py-3 bg-primary text-white-50 fixed-bottom">
+        <div class="footer-copyright text-center">
+            © 2019 Copyright:
+            <a>HelpDesk</a>
+        </div>
+    </footer>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS   ng-show="isLoggedIn"-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.1.0/toaster.js"></script>
+    <script src="app.js"></script>
+    <script src="/controllers/MainController.js"></script>
+    <script src="/controllers/FormController.js"></script>
+    <script src="/controllers/HomePageController.js"></script>
+    <script src="/controllers/TicketPageController.js"></script>
+    <script src="/controllers/TicketSelectController.js"></script>
+    <script src="/controllers/NavController.js"></script>
+    <script src="/services/AuthService.js"></script>
+    <script src="/services/TicketService.js"></script>
+    <script src="/services/ToasterService.js"></script>
+</body>
+
+</html>

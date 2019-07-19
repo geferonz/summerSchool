@@ -1,0 +1,29 @@
+{
+     "name": "myApp",
+     "version": "0.0.1",
+     "description": "My Project",
+     "dependencies": {
+          "body-parser": "^1.19.0",
+          "express": "^4.17.1",
+          "mongodb": "^ 2.2.33"
+     },
+     "engine": "node >=0.6.x",
+     "scripts": {
+          "start": "node server.js",
+          "dev": "nodemon server.js"
+     },
+     "main": "server.js",
+     "repository": {
+          "type": "git",
+          "url": ""
+     },
+     "author": "myApp",
+     "license": "myApp",
+     "bugs": {
+          "url": ""
+     },
+     "homepage": "/",
+     "devDependencies": {
+          "nodemon": "^1.19.1"
+     }
+}

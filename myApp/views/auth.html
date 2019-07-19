@@ -1,0 +1,17 @@
+<div class="container">
+    <div ng-controller="FormController as vm">
+        <div class="p-2 d-flex justify-content-center">
+            <label for="login" class="p-2">Login</label>
+            <input type="text" ng-model="user.login" id="login" class="ml-4">
+        </div>
+        <div class="p-2 d-flex justify-content-center">
+            <label for="password" class="p-2">Password</label>
+            <input type="text" ng-model="user.password"  id="password">
+        </div>
+        <div class="p-2 d-flex justify-content-center">
+            <button ng-click="vm.login()" class="btn btn-outline-primary">Sign in</button>
+        </div>
+    </div>
+    <toaster-container class="toaster main-toaster"
+                       toaster-options="{'animation-class': 'toast-top-right', 'limit': 5, 'position-class': 'toast-top-full-width'}"></toaster-container>
+</div>
