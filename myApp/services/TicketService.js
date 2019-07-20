@@ -5,6 +5,7 @@
         .factory('TicketService', ['$cookies', '$q', '$http', TicketService]);
 
         function TicketService ($cookies, $q, $http) {
+            const apiUrl = 'http://3.120.230.109:8080/api/tickets/';
             return {
                 getAllTickets: getAllTickets,
                 deleteTicket: deleteTicket,
@@ -14,14 +15,14 @@
             };
 
             function getAllTickets () {
-                return $http.get('http://localhost:8080/api/tickets/')
+                return $http.get(apiUrl)
                 .then(sendResponseData)
                 .catch(sendErrorData)
             }
 
             function getTicketById(id) {
                   return $http.get(
-                        'http://localhost:8080/api/tickets/' + id
+                        apiUrl + id
                   )
                         .then(sendResponseData)
                         .catch(sendErrorData)
@@ -29,7 +30,7 @@
 
             function updateTicket(id, data) {
                   return $http.put(
-                        'http://localhost:8080/api/tickets/' + id,
+                        apiUrl + id,
                         data
                   )
                         .then(sendResponseData)
@@ -38,16 +39,16 @@
 
             function createTicket(data) {
                 return $http.post(
-                      'http://localhost:8080/api/tickets',
+                  apiUrl,
                       data
-                )
+                  )
                       .then(sendResponseData)
                       .catch(sendErrorData);
           }
 
             function deleteTicket(id) {
                   return $http.delete(
-                        'http://localhost:8080/api/tickets/' + id
+                        apiUrl + id
                   )
                         .then(sendResponseData)
                         .catch(sendErrorData)
