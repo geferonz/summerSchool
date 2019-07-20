@@ -1,7 +1,7 @@
 <div class = "d-flex" id = "wrapper" ng-controller = "TicketSelectController as vm">
     <!-- Sidebar -->
     <div class = "bg-light border-right border-bottom p-2">
-        <button class="sidebar-heading">Создать заявку</button>
+        <a class="btn-primary btn w-100" href="/create">Создать заявку</a>
         <div class = "list-group list-group-flush">
             <a href = "#" class="list-group-item list-group-item-action bg-light">Открыто</a>
             <a href = "#" class="list-group-item list-group-item-action bg-light">Мои</a>
@@ -36,7 +36,7 @@
                     <td>{{ticket.from}}</td>
                     <td>{{ticket.status}}</td>
                     <td>{{ticket.priority}}</td>
-                    <td><a class="btn btn-default"
+                    <td><a class="border btn btn-default"
                         ng-click="vm.deleteTicket(ticket._id)">Delete</a>
                     </td>
                 </tr>

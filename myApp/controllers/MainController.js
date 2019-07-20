@@ -7,7 +7,7 @@
         var vm = this;
 
         if ($cookies.get('isAuthorized')){
-            //AuthService.login(true);
+            $rootScope.isAuthorized = true;
         }
 
         vm.logout = function () {
@@ -19,4 +19,4 @@
         };
 
     }
-})();
+}());

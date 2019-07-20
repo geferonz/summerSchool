@@ -1,7 +1,7 @@
 <div class = "d-flex" id = "wrapper" ng-controller = "TicketPageController as tc">
     <!-- Sidebar -->
     <div class = "bg-light border-right border-bottom p-2">
-        <button class="sidebar-heading">Создать заявку</button>
+        <a class="btn-primary btn w-100" href="/create">Создать заявку</a>
         <div class = "list-group list-group-flush">
             <a href = "#" class="list-group-item list-group-item-action bg-light">Открыто</a>
             <a href = "#" class="list-group-item list-group-item-action bg-light">Мои</a>
@@ -19,19 +19,6 @@
                 {{tc.ticket.timeCreate}}
             </div>
             <div class="col-3 border p-0">
-                <select ng-model="tc.ticket.status">
-                    <option>
-                        Open
-                    </option>
-                    <option>
-                        In process
-                    </option>
-                    <option>
-                        Close
-                    </option>
-                </select>
-            </div>
-            <div class="col-3 border p-0">
                 <select ng-model="tc.ticket.assignee">
                     <option>
                         Неприсвоенный
@@ -44,13 +31,26 @@
             <div class="col-3 border p-0">
                 <select ng-model="tc.ticket.status">
                     <option>
-                        Open
+                        Открыт
                     </option>
                     <option>
-                        In process
+                        В процессе
                     </option>
                     <option>
-                        Close
+                        Закрыт
+                    </option>
+                </select>
+            </div>
+            <div class="col-3 border p-0">
+                <select ng-model="tc.ticket.priority">
+                    <option>
+                        Стандартний
+                    </option>
+                    <option>
+                        Средний
+                    </option>
+                    <option>
+                        Срочный
                     </option>
                 </select>
             </div>

@@ -10,5 +10,5 @@
             $location.path( path );
         };
     }
-})()
+}());
 

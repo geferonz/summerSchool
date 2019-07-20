@@ -13,4 +13,4 @@
             AuthService.login();
         };
     }
-})();
+}());

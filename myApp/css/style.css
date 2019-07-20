@@ -1,5 +1,6 @@
 select {
     border: none;
+    outline: none;
     left: -4px;
     position: relative;
 }
