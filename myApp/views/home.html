@@ -1,48 +1,48 @@
-<div class = "d-flex" id = "wrapper" ng-controller = "TicketSelectController as vm">
+<div class = 'd-flex' id = 'wrapper' ng-controller = 'TicketSelectController as vm'>
     <!-- Sidebar -->
-    <div class = "bg-light border-right border-bottom p-2">
-        <a class="btn-primary btn w-100" href="/create">Создать заявку</a>
-        <div class = "list-group list-group-flush">
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Открыто</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Мои</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">В процессе</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Выполнено</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Неприсвоенные</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Стандартно</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Средний</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Срочно</a>
+    <div class = 'bg-light border-right border-bottom p-2'>
+        <a class='btn-primary btn w-100' href='/create'>Создать заявку</a>
+        <div class = 'list-group list-group-flush'>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Открыто</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Мои</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>В процессе</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Выполнено</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Неприсвоенные</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Стандартно</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Средний</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Срочно</a>
         </div>
     </div>
-    <div class = "w-100">
-        <table class = "table">
+    <div class = 'w-100'>
+        <table class = 'table'>
             <thead>
                 <tr>
-                    <th scope = "col"><input type="checkbox"></th>
-                    <th scope = "col">Тема</th>
-                    <th scope = "col">Заявка от</th>
-                    <th scope = "col">Исполнитель</th>
-                    <th scope = "col">Последний ответ</th>
-                    <th scope = "col">Статус</th>
-                    <th scope = "col">Приоритет</th>
+                    <th scope = 'col'><input type='checkbox'></th>
+                    <th scope = 'col'>Тема</th>
+                    <th scope = 'col'>Заявка от</th>
+                    <th scope = 'col'>Исполнитель</th>
+                    <th scope = 'col'>Последний ответ</th>
+                    <th scope = 'col'>Статус</th>
+                    <th scope = 'col'>Приоритет</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="ticket in vm.allTickets">
-                    <th scope = "row"><input type="checkbox"></th>
-                    <td><a href="/ticket/{{ticket._id}}" ng-click="vm.editTicket(ticket._id)">{{ticket.title}}</a>
+                <tr ng-repeat='ticket in vm.allTickets'>
+                    <th scope = 'row'><input type='checkbox'></th>
+                    <td><a href='/ticket/{{ticket._id}}' ng-click='vm.editTicket(ticket._id)'>{{ticket.title}}</a>
                     </td>
                     <td>{{ticket.from}}</td>
                     <td>{{ticket.assignee}}</td>
                     <td>{{ticket.from}}</td>
                     <td>{{ticket.status}}</td>
                     <td>{{ticket.priority}}</td>
-                    <td><a class="border btn btn-default"
-                        ng-click="vm.deleteTicket(ticket._id)">Delete</a>
+                    <td><a class='border btn btn-default'
+                        ng-click='vm.deleteTicket(ticket._id)'>Delete</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>    
-    <toaster-container class="toaster main-toaster"
-                       toaster-options="{'animation-class': 'toast-top-right', 'limit': 5}"></toaster-container>
+    <toaster-container class='toaster main-toaster'
+                       toaster-options='{"animation-class": "toast-top-right", "limit": 5}'></toaster-container>
 </div>

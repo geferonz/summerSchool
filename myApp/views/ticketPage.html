@@ -1,25 +1,25 @@
-<div class = "d-flex" id = "wrapper" ng-controller = "TicketPageController as tc">
+<div class = 'd-flex' id = 'wrapper' ng-controller = 'TicketPageController as tc'>
     <!-- Sidebar -->
-    <div class = "bg-light border-right border-bottom p-2">
-        <a class="btn-primary btn w-100" href="/create">Создать заявку</a>
-        <div class = "list-group list-group-flush">
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Открыто</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Мои</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">В процессе</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Выполнено</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Неприсвоенные</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Стандартно</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Средний</a>
-            <a href = "#" class="list-group-item list-group-item-action bg-light">Срочно</a>
+    <div class = 'bg-light border-right border-bottom p-2'>
+        <a class='btn-primary btn w-100' href='/create'>Создать заявку</a>
+        <div class = 'list-group list-group-flush'>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Открыто</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Мои</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>В процессе</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Выполнено</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Неприсвоенные</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Стандартно</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Средний</a>
+            <a href = '#' class='list-group-item list-group-item-action bg-light'>Срочно</a>
         </div>
     </div>
-    <div class="w-100">
-        <div class="row text-center m-0">
-            <div class="col-3 border p-0" ng-model="tc.ticket.timeCreate">
+    <div class='w-100'>
+        <div class='row text-center m-0'>
+            <div class='col-3 border p-0' ng-model='tc.ticket.timeCreate'>
                 {{tc.ticket.timeCreate}}
             </div>
-            <div class="col-3 border p-0">
-                <select ng-model="tc.ticket.assignee">
+            <div class='col-3 border p-0'>
+                <select ng-model='tc.ticket.assignee'>
                     <option>
                         Неприсвоенный
                     </option>
@@ -28,8 +28,8 @@
                     </option>
                 </select>
             </div>
-            <div class="col-3 border p-0">
-                <select ng-model="tc.ticket.status">
+            <div class='col-3 border p-0'>
+                <select ng-model='tc.ticket.status'>
                     <option>
                         Открыт
                     </option>
@@ -41,8 +41,8 @@
                     </option>
                 </select>
             </div>
-            <div class="col-3 border p-0">
-                <select ng-model="tc.ticket.priority">
+            <div class='col-3 border p-0'>
+                <select ng-model='tc.ticket.priority'>
                     <option>
                         Стандартний
                     </option>
@@ -54,29 +54,29 @@
                     </option>
                 </select>
             </div>
-            <div class="col-4 border p-0 offset-2 mt-4" ng-model="tc.ticket.timeUpdate">
+            <div class='col-4 border p-0 offset-2 mt-4' ng-model='tc.ticket.timeUpdate'>
                 {{tc.ticket.timeUpdate}}
             </div>
-            <div class="col-4 border p-0 mt-4" ng-model="tc.ticket.from">
+            <div class='col-4 border p-0 mt-4' ng-model='tc.ticket.from'>
                 {{tc.ticket.from}}
             </div>            
-            <div class="col-8 border p-2 offset-2" ng-model="tc.ticket.title">
+            <div class='col-8 border p-2 offset-2' ng-model='tc.ticket.title'>
                 {{tc.ticket.title}}
             </div>
-            <div class="col-8 border p-2 offset-2" ng-model="tc.ticket.text">
+            <div class='col-8 border p-2 offset-2' ng-model='tc.ticket.text'>
                 {{tc.ticket.text}}
             </div>
-            <div class="col-8 border p-2 offset-2">
-                <textarea type="text" name="textMessage" class = "w-100" ng-model="ticket.newtext"></textarea>
-                <button type="submit" class="btn btn-primary"
-                                    ng-click="tc.updateTicket()">Submit
+            <div class='col-8 border p-2 offset-2'>
+                <textarea type='text' name='textMessage' class = 'w-100' ng-model='ticket.newtext'></textarea>
+                <button type='submit' class='btn btn-primary'
+                                    ng-click='tc.updateTicket()'>Submit
                 </button>
-                <button class="btn btn-warning"
-                                    ng-click="tc.cancelUpdate()">Cancel
+                <button class='btn btn-warning'
+                                    ng-click='tc.cancelUpdate()'>Cancel
                 </button>
             </div>
         </div>
     </div>
-    <toaster-container class="toaster main-toaster"
-                       toaster-options="{'animation-class': 'toast-top-right', 'limit': 5}"></toaster-container>
+    <toaster-container class='toaster main-toaster'
+                       toaster-options='{"animation-class": "toast-top-right", "limit": 5}'></toaster-container>
 </div>

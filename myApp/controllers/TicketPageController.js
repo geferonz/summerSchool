@@ -27,8 +27,6 @@
 
             vm.updateTicket = function() {
                 vm.ticket.text += $scope.ticket.newtext;
-                //console.log('Updated ticket ')
-                //console.log(vm.ticket);
                 TicketService.updateTicket($routeParams.id, vm.ticket)
                 .then(updateTicketSuccess, null)
                 .catch(updateTicketError);

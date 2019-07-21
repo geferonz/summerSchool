@@ -4,3 +4,7 @@ select {
     left: -4px;
     position: relative;
 }
+
+form select {
+    width: 150px;
+}
