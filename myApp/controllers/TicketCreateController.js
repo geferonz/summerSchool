@@ -7,11 +7,13 @@
         var vm = this;
 
         vm.createTicket = function() {
-            if(angular.element(angular.element($('#title')).val() === '') 
-                || angular.element(angular.element($('#author')).val() === '') 
-                || angular.element(angular.element($('#textMessage')).val() === '')) {
-                console.log('1');
-            }
+            // if(vm.angular.element(vm.angular.element($('#title')).val() === '') 
+            //     || vm.angular.element(vm.angular.element($('#author')).val() === '') 
+            //     || vm.angular.element(vm.angular.element($('#textMessage')).val() === '')) {
+            //     console.log('1');
+            //     console.log(vm.angular.element($('#title')).val());
+            // }
+            console.log(angular.element($('#title')).val());
             TicketService.createTicket($scope.ticket)
             .then(createTicketSuccess, null)
             .catch(createTicketError);

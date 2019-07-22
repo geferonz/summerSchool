@@ -2,6 +2,11 @@ th, tr {
     min-width: 159px;
 }
 
+.auth {
+    width: 300px;
+    margin: auto;
+}
+
 .navbar a {
     width: 144px;
 }

@@ -5,65 +5,30 @@
                 <div class='panel-heading main-color-bg'>
                     <h3 class='panel-title'>Редактирование заявки</h3>
                 </div>
-                <!-- <div class='col-3 border p-0 font-weight-bold' ng-model='tc.ticket.timeCreate'>
-                    
-                </div>
-                <div class='col-3 border p-0 font-weight-bold'>
-                    Исполнитель
-                </div>
-                <div class='col-3 border p-0 font-weight-bold'>
-                    Статус
-                </div>
-                <div class='col-3 border p-0 font-weight-bold'>
-                    Приоритет
-                </div>
-                <div class='col-3 border p-0' ng-model='tc.ticket.timeCreate'>
-                    {{tc.ticket.timeCreate}}
-                </div>
-                <div class='col-3 border p-0'>
-                    <select ng-model='tc.ticket.assignee'>
-                        <option>Неприсвоенный</option>
-                        <option>Admin</option>
-                    </select>
-                </div>
-                <div class='col-3 border p-0'>
-                    <select ng-model='tc.ticket.status'>
-                        <option>Открыто</option>
-                        <option>В процессе</option>
-                        <option>Выполнено</option>
-                    </select>
-                </div>
-                <div class='col-3 border p-0'>
-                    <select ng-model='tc.ticket.priority'>
-                        <option>Стандартный</option>
-                        <option>Средний</option>
-                        <option>Срочный</option>
-                    </select>
-                </div> -->
                 <div class='row m-0'>
-                    <div class='col-4 form-group p-0'>
-                        <label for='assignee'>Администратор:</label>
+                    <div class='col-4 form-group p-1'>
+                        <label for='assignee'>Админ:</label>
                         <select name='assignee'
-                        id='assignee' class='border ml-3' required
+                        id='assignee' class='border w-100' required
                         ng-model='tc.ticket.assignee'>
                             <option>Неприсвоенный</option>
                             <option>Admin</option>
                         </select>
                     </div>
-                    <div class='col-4 form-group p-0'>
+                    <div class='col-4 form-group p-1'>
                         <label for='status'>Статус:</label>
                         <select name='status'
-                        id='status' class='border ml-3' required
+                        id='status' class='border w-100' required
                         ng-model='tc.ticket.status'>
                             <option>Открыт</option>
                             <option>В процессе</option>
                             <option>Закрыт</option>
                         </select>
                     </div>
-                    <div class='col-4 form-group p-0'>
+                    <div class='col-4 form-group p-1'>
                         <label for='priority'>Приоритет:</label>
                         <select name='priority'
-                        id='priority' class='border ml-3' required
+                        id='priority' class='border w-100' required
                         ng-model='tc.ticket.priority'>
                             <option>Стандартный</option>
                             <option>Средний</option>
