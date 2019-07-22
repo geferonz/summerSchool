@@ -1,23 +1,27 @@
-(function () {
+;(function () {
     'use strict';
     angular.module('myApp')
         .controller('TicketCreateController', ['$scope', '$location', '$log', 'TicketService', 'ToasterService', TicketCreateController]);
 
     function TicketCreateController($scope, $location, $log, TicketService, ToasterService) {
         var vm = this;
-
-        vm.createTicket = function() {
+        console.log($scope)
+        console.log("ghe")
+        $scope.createTicket = function() {
             // if(vm.angular.element(vm.angular.element($('#title')).val() === '') 
             //     || vm.angular.element(vm.angular.element($('#author')).val() === '') 
             //     || vm.angular.element(vm.angular.element($('#textMessage')).val() === '')) {
             //     console.log('1');
             //     console.log(vm.angular.element($('#title')).val());
             // }
-            console.log(angular.element($('#title')).val());
-            TicketService.createTicket($scope.ticket)
-            .then(createTicketSuccess, null)
-            .catch(createTicketError);
-            $location.path('/home');
+            if(false) {
+                TicketService.createTicket($scope.ticket)
+                .then(createTicketSuccess, null)
+                .catch(createTicketError);
+                $location.path('/home');
+            }
+            console.log('Hi');
+            $log.debug($scope);
         }
 
         vm.cancelCreation = function() {
