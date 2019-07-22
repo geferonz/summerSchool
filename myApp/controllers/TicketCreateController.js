@@ -7,7 +7,11 @@
         var vm = this;
 
         vm.createTicket = function() {
-            console.log($scope.ticket);
+            if(angular.element(angular.element($('#title')).val() === '') 
+                || angular.element(angular.element($('#author')).val() === '') 
+                || angular.element(angular.element($('#textMessage')).val() === '')) {
+                console.log('1');
+            }
             TicketService.createTicket($scope.ticket)
             .then(createTicketSuccess, null)
             .catch(createTicketError);

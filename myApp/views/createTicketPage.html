@@ -1,86 +1,70 @@
-<div class='container' ng-controller = 'TicketCreateController as tc'>
+<div class='container' ng-controller='TicketCreateController as tc'>
     <div class='row'>
         <div class='col-md-12'>
             <div class='panel panel-default'>
                 <div class='panel-heading main-color-bg'>
-                    <h3 class='panel-title'>Book form</h3>
+                    <h3 class='panel-title'>Создание заявки</h3>
                 </div>
                 <div class='panel-body'>
                     <form name='bookForm'>
 
                         <div class='form-group'>
-                            <label for='title'>Title</label>
+                            <label for='title'>Тема</label>
                             <input type='text' class='form-control' name='title'
                                    id='title'
-                                   placeholder='Give a title to a message'
-                                   required
+                                   placeholder='Название темы заявки'
+                                   ng-required='!ticket.title'
                                    tabindex='1'
                                    ng-model='ticket.title'>
                         </div>
 
                         <div class='form-group'>
-                            <label for='author'>Author</label>
+                            <label for='author'>Заявитель</label>
                             <input type='text' class='form-control' name='author'
                                    id='author' required tabindex='2'
-                                   placeholder='Set an author a message'
+                                   placeholder='От кого'
                                    ng-model='ticket.from'>
                         </div>
 
                         <div class='row m-0'>
                             <div class='col-4 form-group p-0'>
-                                <label for='assignee'>Administrator:</label>
+                                <label for='assignee'>Администратор:</label>
                                 <select name='assignee'
-                                id='assignee' class = 'border ml-3' required
+                                id='assignee' class='border ml-3' required
                                 ng-model='ticket.assignee'>
-                                    <option>
-                                        Неприсвоенный
-                                    </option>
-                                    <option>
-                                        Admin
-                                    </option>
+                                    <option>Неприсвоенный</option>
+                                    <option>Admin</option>
                                 </select>
                             </div>
 
                             <div class='col-4 form-group p-0'>
-                                <label for='status'>Status:</label>
+                                <label for='status'>Статус:</label>
                                 <select name='status'
-                                id='status' class = 'border ml-3' required
+                                id='status' class='border ml-3' required
                                 ng-model='ticket.status'>
-                                    <option>
-                                        Открыт
-                                    </option>
-                                    <option>
-                                        В процессе
-                                    </option>
-                                    <option>
-                                        Закрыт
-                                    </option>
+                                    <option>Открыт</option>
+                                    <option>В процессе</option>
+                                    <option>Закрыт</option>
                                 </select>
                             </div>
 
                             <div class='col-4 form-group p-0'>
-                                <label for='priority'>Priority:</label>
+                                <label for='priority'>Приоритет:</label>
                                 <select name='priority'
-                                id='priority' class = 'border ml-3' required
+                                id='priority' class='border ml-3' required
                                 ng-model='ticket.priority'>
-                                    <option>
-                                        Стандартний
-                                    </option>
-                                    <option>
-                                        Средний
-                                    </option>
-                                    <option>
-                                        Срочный
-                                    </option>
+                                    <option>Стандартный</option>
+                                    <option>Средний</option>
+                                    <option>Срочный</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class='form-group'>
-                            <label for='textMessage'>Message</label>
+                            <label for='textMessage'>Текст заявки</label>
                             <textarea type='number' class='form-control' name='textMessage'
                                    id='textMessage' required tabindex='2'
-                                   placeholder='Set textMessage'
+                                   placeholder='Описание проблемы'
                                    ng-model='ticket.text'></textarea>
                         </div>
 

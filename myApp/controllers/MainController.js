@@ -16,7 +16,6 @@
             $timeout(function () {
                 ToasterService.getConfiguredToaster('success', 'Success', 'Successfully logged out');}, 10);
             $location.path('/');
-        };
-
+        };        
     }
 }());

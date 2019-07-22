@@ -56,7 +56,6 @@
             }
 
             function sendResponseData(response) {
-                console.log(response);
                 return response;
             }
 

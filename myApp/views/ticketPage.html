@@ -1,79 +1,102 @@
-<div class = 'd-flex' id = 'wrapper' ng-controller = 'TicketPageController as tc'>
-    <!-- Sidebar -->
-    <div class = 'bg-light border-right border-bottom p-2'>
-        <a class='btn-primary btn w-100' href='/create'>Создать заявку</a>
-        <div class = 'list-group list-group-flush'>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Открыто</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Мои</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>В процессе</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Выполнено</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Неприсвоенные</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Стандартно</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Средний</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Срочно</a>
-        </div>
-    </div>
-    <div class='w-100'>
-        <div class='row text-center m-0'>
-            <div class='col-3 border p-0' ng-model='tc.ticket.timeCreate'>
-                {{tc.ticket.timeCreate}}
-            </div>
-            <div class='col-3 border p-0'>
-                <select ng-model='tc.ticket.assignee'>
-                    <option>
-                        Неприсвоенный
-                    </option>
-                    <option>
-                        Admin
-                    </option>
-                </select>
-            </div>
-            <div class='col-3 border p-0'>
-                <select ng-model='tc.ticket.status'>
-                    <option>
-                        Открыт
-                    </option>
-                    <option>
-                        В процессе
-                    </option>
-                    <option>
-                        Закрыт
-                    </option>
-                </select>
-            </div>
-            <div class='col-3 border p-0'>
-                <select ng-model='tc.ticket.priority'>
-                    <option>
-                        Стандартний
-                    </option>
-                    <option>
-                        Средний
-                    </option>
-                    <option>
-                        Срочный
-                    </option>
-                </select>
-            </div>
-            <div class='col-4 border p-0 offset-2 mt-4' ng-model='tc.ticket.timeUpdate'>
-                {{tc.ticket.timeUpdate}}
-            </div>
-            <div class='col-4 border p-0 mt-4' ng-model='tc.ticket.from'>
-                {{tc.ticket.from}}
-            </div>            
-            <div class='col-8 border p-2 offset-2' ng-model='tc.ticket.title'>
-                {{tc.ticket.title}}
-            </div>
-            <div class='col-8 border p-2 offset-2' ng-model='tc.ticket.text'>
-                {{tc.ticket.text}}
-            </div>
-            <div class='col-8 border p-2 offset-2'>
-                <textarea type='text' name='textMessage' class = 'w-100' ng-model='ticket.newtext'></textarea>
-                <button type='submit' class='btn btn-primary'
-                                    ng-click='tc.updateTicket()'>Submit
-                </button>
-                <button class='btn btn-warning'
-                                    ng-click='tc.cancelUpdate()'>Cancel
-                </button>
+<div class='container' ng-controller='TicketPageController as tc'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='panel panel-default'>
+                <div class='panel-heading main-color-bg'>
+                    <h3 class='panel-title'>Редактирование заявки</h3>
+                </div>
+                <!-- <div class='col-3 border p-0 font-weight-bold' ng-model='tc.ticket.timeCreate'>
+                    
+                </div>
+                <div class='col-3 border p-0 font-weight-bold'>
+                    Исполнитель
+                </div>
+                <div class='col-3 border p-0 font-weight-bold'>
+                    Статус
+                </div>
+                <div class='col-3 border p-0 font-weight-bold'>
+                    Приоритет
+                </div>
+                <div class='col-3 border p-0' ng-model='tc.ticket.timeCreate'>
+                    {{tc.ticket.timeCreate}}
+                </div>
+                <div class='col-3 border p-0'>
+                    <select ng-model='tc.ticket.assignee'>
+                        <option>Неприсвоенный</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <div class='col-3 border p-0'>
+                    <select ng-model='tc.ticket.status'>
+                        <option>Открыто</option>
+                        <option>В процессе</option>
+                        <option>Выполнено</option>
+                    </select>
+                </div>
+                <div class='col-3 border p-0'>
+                    <select ng-model='tc.ticket.priority'>
+                        <option>Стандартный</option>
+                        <option>Средний</option>
+                        <option>Срочный</option>
+                    </select>
+                </div> -->
+                <div class='row m-0'>
+                    <div class='col-4 form-group p-0'>
+                        <label for='assignee'>Администратор:</label>
+                        <select name='assignee'
+                        id='assignee' class='border ml-3' required
+                        ng-model='tc.ticket.assignee'>
+                            <option>Неприсвоенный</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+                    <div class='col-4 form-group p-0'>
+                        <label for='status'>Статус:</label>
+                        <select name='status'
+                        id='status' class='border ml-3' required
+                        ng-model='tc.ticket.status'>
+                            <option>Открыт</option>
+                            <option>В процессе</option>
+                            <option>Закрыт</option>
+                        </select>
+                    </div>
+                    <div class='col-4 form-group p-0'>
+                        <label for='priority'>Приоритет:</label>
+                        <select name='priority'
+                        id='priority' class='border ml-3' required
+                        ng-model='tc.ticket.priority'>
+                            <option>Стандартный</option>
+                            <option>Средний</option>
+                            <option>Срочный</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='col-12 p-0 d-none' ng-model='tc.ticket.timeUpdate'>
+                    Время последнего изменения: {{tc.ticket.timeUpdate}}
+                </div>
+                <div class='col-12 p-0' ng-model='tc.ticket.title'>
+                    Название заявки: {{tc.ticket.title}}
+                </div>
+                <div class='col-12 p-0' ng-model='tc.ticket.from'>
+                    Автор: {{tc.ticket.from}}
+                </div>
+                <div class='col-12 p-0' ng-model='tc.ticket.text'>
+                    <div class='col-12 p-0' ng-model='tc.ticket.text'>
+                        Текст заявки:
+                    </div>
+                    <div class='col-12 form-control p-2 text-center h-25' ng-model='tc.ticket.text'>
+                        {{tc.ticket.text}}
+                    </div>
+                </div>
+                <div class='col-12 form-control p-2 mt-3 h-25'>
+                    <textarea type='text' name='textMessage' class='w-100' ng-model='ticket.newtext' placeholder='Введите текст для добавления'></textarea>
+                    <button type='submit' class='btn btn-primary'
+                                        ng-click='tc.updateTicket()'>Submit
+                    </button>
+                    <button class='btn btn-warning'
+                                        ng-click='tc.cancelUpdate()'>Cancel
+                    </button>
+                </div>
             </div>
         </div>
     </div>

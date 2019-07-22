@@ -1,35 +1,37 @@
-<div class = 'd-flex' id = 'wrapper' ng-controller = 'TicketSelectController as vm'>
+<div class='d-flex' id='wrapper' ng-controller='TicketSelectController as vm'>
     <!-- Sidebar -->
-    <div class = 'bg-light border-right border-bottom p-2'>
+    <div class='bg-light border-right border-bottom p-2'>
         <a class='btn-primary btn w-100' href='/create'>Создать заявку</a>
-        <div class = 'list-group list-group-flush'>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Открыто</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Мои</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>В процессе</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Выполнено</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Неприсвоенные</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Стандартно</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Средний</a>
-            <a href = '#' class='list-group-item list-group-item-action bg-light'>Срочно</a>
+        <div class='list-group list-group-flush'>
+            <input type='text' class='m-2' placeholder='Поиск' name='search' value='' id='global-search' ng-change="ticketsSearchFiltering()" ng-model='search'>
+            <div class='list-group-item list-group-item-action bg-light font-weight-bold border-0'>Заявки</div>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("none", "none")'>Все</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("assignee", "Admin")'>Мои</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("assignee", "Неприсвоенный")'>Неприсвоенные</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("status", "Открыто")'>Открытые</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("status", "В процессе")'>В процессе</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("status", "Выполнено")'>Выполненные</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("priority", "Стандартный")'>Стандартные</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("priority", "Средний")'>Средние</a>
+            <a class='list-group-item list-group-item-action bg-light' ng-click='ticketsStatusFiltering("priority", "Срочный")'>Срочные</a>
         </div>
     </div>
-    <div class = 'w-100'>
-        <table class = 'table'>
+    <div class='w-100'>
+        <table class='table'>
             <thead>
                 <tr>
-                    <th scope = 'col'><input type='checkbox'></th>
-                    <th scope = 'col'>Тема</th>
-                    <th scope = 'col'>Заявка от</th>
-                    <th scope = 'col'>Исполнитель</th>
-                    <th scope = 'col'>Последний ответ</th>
-                    <th scope = 'col'>Статус</th>
-                    <th scope = 'col'>Приоритет</th>
+                    <th>Тема</th>
+                    <th>Заявка от</th>
+                    <th>Исполнитель</th>
+                    <th>Последний ответ</th>
+                    <th>Статус</th>
+                    <th>Приоритет</th>
+                    <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr ng-repeat='ticket in vm.allTickets'>
-                    <th scope = 'row'><input type='checkbox'></th>
-                    <td><a href='/ticket/{{ticket._id}}' ng-click='vm.editTicket(ticket._id)'>{{ticket.title}}</a>
+            <tbody id='tickets'>
+                <tr ng-repeat='ticket in vm.allTickets' id='{{ticket._id}}' data-index='{{$index}}'>
+                    <td><a href='/ticket/{{ticket._id}}'>{{ticket.title}}</a>
                     </td>
                     <td>{{ticket.from}}</td>
                     <td>{{ticket.assignee}}</td>

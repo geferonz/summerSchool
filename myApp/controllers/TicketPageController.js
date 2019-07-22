@@ -3,8 +3,6 @@
     angular.module('myApp')
         .controller('TicketPageController', ['$routeParams', '$scope', '$location', 'TicketService', '$log', 'ToasterService', TicketPageController]);
 
-
-
         function TicketPageController($routeParams, $scope, $location, TicketService, $log, ToasterService) {
             var vm = this;
 
