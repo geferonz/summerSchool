@@ -5,23 +5,22 @@
 
     function TicketCreateController($scope, $location, $log, TicketService, ToasterService) {
         var vm = this;
-        console.log($scope)
-        console.log("ghe")
-        $scope.createTicket = function() {
+
+        $scope.createTicket = function(isvalid) {
             // if(vm.angular.element(vm.angular.element($('#title')).val() === '') 
             //     || vm.angular.element(vm.angular.element($('#author')).val() === '') 
             //     || vm.angular.element(vm.angular.element($('#textMessage')).val() === '')) {
             //     console.log('1');
             //     console.log(vm.angular.element($('#title')).val());
             // }
-            if(false) {
+            if (isvalid){
                 TicketService.createTicket($scope.ticket)
                 .then(createTicketSuccess, null)
                 .catch(createTicketError);
                 $location.path('/home');
+                
             }
-            console.log('Hi');
-            $log.debug($scope);
+            console.log($scope.ticketCreate)
         }
 
         vm.cancelCreation = function() {

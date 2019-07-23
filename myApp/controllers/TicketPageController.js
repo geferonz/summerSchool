@@ -14,7 +14,7 @@
 
             function getTicketSuccess(response) {
                 $log.debug(response);
-                vm.ticket = response.data;
+                $scope.ticket = response.data;
                 ToasterService.getConfiguredToaster('success', 'Success', 'Successfully got a ticket');
             }
 
@@ -23,21 +23,21 @@
                 ToasterService.getConfiguredToaster('error', 'Error', 'Failed to load a ticket');
             }
 
-            vm.updateTicket = function() {
-                vm.ticket.text += $scope.ticket.newtext;
-                TicketService.updateTicket($routeParams.id, vm.ticket)
+            $scope.updateTicket = function() {
+                $scope.ticket.text += $scope.ticket.newtext;
+                TicketService.updateTicket($routeParams.id, $scope.ticket)
                 .then(updateTicketSuccess, null)
                 .catch(updateTicketError);
                 $location.path('/home');
             }
     
-            vm.cancelUpdate = function() {
+            $scope.cancelUpdate = function() {
                 $location.path('/home');
             }
     
             function updateTicketSuccess(response) {
                 $log.debug(response);
-                vm.ticket = response.data;
+                $scope.ticket = response.data;
                 ToasterService.getConfiguredToaster('success', 'Success', 'Successfully update ticket');
             }
     

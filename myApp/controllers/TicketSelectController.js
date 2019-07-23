@@ -10,7 +10,7 @@
             .then(getTicketsSuccess, null)
             .catch(getTicketsError);
 
-        vm.deleteTicket = function(id){
+        $scope.deleteTicket = function(id){
             TicketService.deleteTicket(id)
             .then(deleteTicketsSuccess, null)
             .catch(deleteTicketsError);
@@ -31,7 +31,7 @@
 
         function getTicketsSuccess(response) {
             $log.debug(response);
-            vm.allTickets = response.data;
+            $scope.allTickets = response.data;
             ToasterService.getConfiguredToaster('success', 'Success', 'Successfully got all tickets');
         }
 
@@ -49,32 +49,32 @@
         }
 
         function filter(title, condition) {
-            for (var i = 0; i < vm.allTickets.length; i++) {
-                vm.myEl = angular.element('#' + vm.allTickets[i]._id);
-                console.log(condition);
+            for (var i = 0; i < $scope.allTickets.length; i++) {
+                $scope.myEl = angular.element('#' + $scope.allTickets[i]._id);
+                
                 if(title === 'none' && condition === 'none') {
                     $scope.search = '';
-                    vm.myEl.removeClass('d-none');
+                    $scope.myEl.removeClass('d-none');
                 }
-                else if(title === 'assignee' && condition !== vm.allTickets[i].assignee) {
-                    vm.myEl.addClass('d-none');
+                else if(title === 'assignee' && condition !== $scope.allTickets[i].assignee) {
+                    $scope.myEl.addClass('d-none');
                 }
-                else if(title === 'status' && condition !== vm.allTickets[i].status) {
-                    vm.myEl.addClass('d-none');
+                else if(title === 'status' && condition !== $scope.allTickets[i].status) {
+                    $scope.myEl.addClass('d-none');
                 }
-                else if(title === 'priority' && condition !== vm.allTickets[i].priority) {
-                    vm.myEl.addClass('d-none');
+                else if(title === 'priority' && condition !== $scope.allTickets[i].priority) {
+                    $scope.myEl.addClass('d-none');
                 }
                 else if(title === 'search' && condition === $scope.search) {
-                    if(!vm.allTickets[i].title.includes(condition)) {
-                        vm.myEl.addClass('d-none');
+                    if(!$scope.allTickets[i].title.includes(condition)) {
+                        $scope.myEl.addClass('d-none');
                     }
                     else {
-                        vm.myEl.removeClass('d-none');
+                        $scope.myEl.removeClass('d-none');
                     }
                 }
                 else {
-                    vm.myEl.removeClass('d-none');
+                    $scope.myEl.removeClass('d-none');
                 }
             }
         }

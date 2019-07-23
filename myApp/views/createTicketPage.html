@@ -6,14 +6,15 @@
                     <h3 class="panel-title">Создание заявки</h3>
                 </div>
                 <div class="panel-body">
-                    <form name="ticketCreate" ng-submit="createTicket(ticketCreate)">
+                    <form name="ticketCreate" novalidate ng-submit="createTicket(ticketCreate.$valid)">
 
                         <div class="form-group">
                             <label for="title">Тема</label>
                             <input type="text" class="form-control" name="title"
                                    id="title"
                                    placeholder="Название темы заявки"
-                                   required tabindex="1"
+                                   required
+                                   tabindex="1"
                                    ng-model="ticket.title">
                         </div>
 
@@ -61,18 +62,18 @@
 
                         <div class="form-group">
                             <label for="textMessage">Текст заявки</label>
-                            <textarea type="number" class="form-control" name="textMessage"
+                            <textarea type="text" class="form-control" name="textMessage"
                                    id="textMessage" required tabindex="2"
                                    placeholder="Описание проблемы"
                                    ng-model="ticket.text"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-warning"
-                                    ng-click="tc.cancelCreation()">Cancel
-                            </button>
-                            <button type="button" class="btn btn-primary"
-                                   ng-click="createTicket(ticketCreate)">Save
+                            <a class="btn btn-warning"
+                                    href="/home">Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary"
+                                    >Save
                             </button>
 
                         </div>

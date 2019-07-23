@@ -1,7 +1,15 @@
 (function () {
     'use strict';
     angular.module('myApp')
-        .controller('MainController', ['$scope', '$location', '$rootScope', '$cookies', '$timeout', 'ToasterService', 'AuthService', MainController]);
+        .controller('MainController', 
+        ['$scope', 
+        '$location', 
+        '$rootScope', 
+        '$cookies', 
+        '$timeout', 
+        'ToasterService', 
+        'AuthService', 
+        MainController]);
 
     function MainController($scope, $location, $rootScope, $cookies, $timeout, ToasterService, AuthService) {
         var vm = this;

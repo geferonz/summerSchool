@@ -9,7 +9,7 @@
         $rootScope.user = {login:'', password:''};
         $rootScope.auth = {login:'admin', password:'123'};
 
-        vm.login = function () {
+        $scope.login = function () {
             AuthService.login();
         };
     }
