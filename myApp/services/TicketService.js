@@ -5,8 +5,8 @@
         .factory('TicketService', ['$cookies', '$q', '$http', TicketService]);
 
         function TicketService ($cookies, $q, $http) {
-            //const apiUrl = 'http://3.120.230.109:8080/api/tickets/';
-            const apiUrl = 'http://localhost:8080/api/tickets/';
+            const apiUrl = 'http://3.120.230.109:8080/api/tickets/';
+            // const apiUrl = 'http://localhost:8080/api/tickets/';
             return {
                 getAllTickets: getAllTickets,
                 deleteTicket: deleteTicket,
